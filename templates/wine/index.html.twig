@@ -25,7 +25,14 @@
 			<img src="..." class="card-img-top" alt="{{wine.name}}">
 			<div class="card-body">
 				<h5 class="card-title">{{wine.name}}</h5>
-				<p class="card-text">{{wine.description}}</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<p class="card-text">{{wine.description}}</p>
+				</li>
+				<li class="list-group-item">{{wine.region.name}}</li>
+			</ul>
+			<div class="card-body">
 				<a href="#" class="btn btn-primary">En savoir plus !</a>
 			</div>
 		</div>
