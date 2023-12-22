@@ -2,17 +2,21 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\WineRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class WineController extends AbstractController
 {
-    #[Route('/wine', name: 'app_wine')]
-    public function index(): Response
+    #[Route('/', name: 'app_wine')]
+    public function index(Request $request, WineRepository $winerepo): Response
     {
+        $wines = $winerepo->findAll();
+
         return $this->render('wine/index.html.twig', [
-            'controller_name' => 'WineController',
+            'controller_name' => 'WineController', 'wines' => $wines,
         ]);
     }
 }
