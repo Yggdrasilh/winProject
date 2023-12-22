@@ -34,14 +34,13 @@ class WineController extends AbstractController
 
         $regionsOrdered = [];
         foreach ($regions as $region) {
-            $regionsOrdered[$region->getName()] = $region; // Use the Region entity as the value
+            $regionsOrdered[$region->getNumero() . " - " . $region->getName()] = $region; // Use the Region entity as the value
         }
 
         $form = $this->createForm(WineType::class, $wine)
             ->add('region', ChoiceType::class, [
                 'label' => 'Region :',
                 'choices' => $regionsOrdered,
-                'choice_label' => 'name', // Assuming Region entity has a "name" property
             ]);
 
         $form->handleRequest($request);
