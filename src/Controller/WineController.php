@@ -19,7 +19,7 @@ class WineController extends AbstractController
     #[Route('/', name: 'app_wine')]
     public function index(Request $request, WineRepository $winerepo): Response
     {
-        $wines = $winerepo->findAll();
+        $wines = $winerepo->allWine_ThisRegion();
 
         return $this->render('wine/index.html.twig', [
             'controller_name' => 'WineController', 'wines' => $wines,
