@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			{% block title %}Welcome!
 			{% endblock %}
@@ -33,24 +34,7 @@
 								<a class="nav-link active" aria-current="page" href="{{ path('app_wine') }}">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_wine_add') }}">Ajout</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Dropdown
-								</a>
-								<ul class="dropdown-menu">
-									<li>
-										<a class="dropdown-item" href="#">Action</a>
-									</li>
-									<li>
-										<a class="dropdown-item" href="#">Another action</a>
-									</li>
-									<li><hr class="dropdown-divider"></li>
-									<li>
-										<a class="dropdown-item" href="#">Something else here</a>
-									</li>
-								</ul>
+								<a class="nav-link active" href="{{ path('app_wine_add') }}">Ajout</a>
 							</li>
 						</ul>
 						<form class="d-flex" role="search">
